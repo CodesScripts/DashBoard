@@ -1,0 +1,22 @@
+<div class="form-box" id="login-box">
+    <div class="header">Se connecter à l'applic</div>
+    <form action="dashboard.html" method="post">
+        <div class="body bg-gray">
+            <div class="form-group has-error">
+                <label class="control-label hide" id="form-val"><i class="fa fa-times-circle-o"></i> Merci de renseigner ce champ afin de poursuivre</label>
+            </div>
+            <div class="form-group has-error">
+                <label class="control-label hide" for="userid"><i class="fa fa-times-circle-o"></i> Champ requis</label>
+                <input type="text" name="userid" id="userid" class="form-control" placeholder="Login" />
+            </div>
+            <div class="form-group has-error">
+                <label class="control-label hide" for="password"><i class="fa fa-times-circle-o"></i> Champ requis</label>
+                <input type="password" name="password" id="password" class="form-control" placeholder="Mot de Passe" />
+            </div>
+        </div>
+        <div class="footer">
+            <button type="button" id="login" class="btn bg-olive btn-block">Se connecter</button>
+            <a href="#/register" class="text-center">Creation / Configuration de compte</a>
+        </div>
+    </form>
+</div>

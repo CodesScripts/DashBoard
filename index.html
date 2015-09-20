@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="dashboard"  ng-controller="tempCtrl" ng-class="{'bg-black' : !user.isAuthenticated}">
+
+<head>
+  <meta charset="UTF-8">
+  <title>My Dashboard | Sign in</title>
+  <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+
+   <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+
+  <style type="text/css">
+    .uname,.info,.content-header {
+      text-transform: uppercase;
+    }
+  </style>
+
+</head>
+
+<body ng-cloak class="ng-cloak"  ng-class="{'skin-blue' : user.isAuthenticated, 'bg-black' : !user.isAuthenticated}">
+
+  <!-- Page to connect user -->
+  <div ng-if="!user.isAuthenticated">
+    <div ui-view="login" ng-login></div>
+    <div ui-view="register" ng-register></div>
+  </div>
+
+  <div ng-if="user.isAuthenticated">
+
+
+    <!-- Header for quick links -->
+    <ng-header></ng-header>
+
+    <div class="wrapper row-offcanvas row-offcanvas-left">
+
+      <!-- Left menu in Dashboard from Directive -->
+      <ng-sidenav></ng-sidenav>
+
+      <!-- Application for user -->
+      <span ui-view></span>
+
+    </div>
+
+  </div>
+
+
+  <script type="text/javascript" src="renderer.js"></script>
+
+  <!-- build:remove -->
+  <script>
+    if (process.env.BROWSER_SYNC_CLIENT_URL) {
+      const current = document.currentScript;
+      const script = document.createElement('script');
+      script.src = process.env.BROWSER_SYNC_CLIENT_URL;
+      script.async = true;
+      current.parentNode.insertBefore(script, current);
+    }
+  </script>
+  <!-- endbuild -->
+
+
+</body>
+</html>
