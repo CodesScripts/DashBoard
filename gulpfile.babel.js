@@ -149,6 +149,8 @@ const src = {
     .on('change', () => gulp.start('scripts:renderer'));
     browserSync.watch(src.html)
     .on('change', () => gulp.start('copy:html', browserSync.reload));
+    browserSync.watch(src.view)
+    .on('change', () => gulp.start('copy:view', browserSync.reload));
 
     cb();
     });
